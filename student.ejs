@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="zxx" class="no-js">
+
+<head>
+    <!-- Mobile Specific Meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="public/img/fav.png">
+    <!-- Site Title -->
+    <script src="https://kit.fontawesome.com/0f90afb721.js" crossorigin="anonymous"></script>
+    <title>Student</title>
+
+    <!--
+			Google Font
+			============================================= -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,500,600" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500i" rel="stylesheet">
+
+    <!--
+			CSS
+			============================================= -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/themify-icons/0.1.2/css/themify-icons.css">
+    <link rel="stylesheet" href="public/css/linearicons.css">
+    <link rel="stylesheet" href="public/css/font-awesome.min.css">
+    <link rel="stylesheet" href="public/css/bootstrap.css">
+    <link rel="stylesheet" href="public/css/magnific-popup.css">
+    <link rel="stylesheet" href="public/css/nice-select.css">
+    <link rel="stylesheet" href="public/css/animate.min.css">
+    <link rel="stylesheet" href="public/css/owl.carousel.css">
+    <link rel="stylesheet" href="public/css/main.css">
+</head>
+
+<body>
+
+    <!-- Start Header Area -->
+    <header id="header">
+        <div class="container">
+            <div class="row align-items-center justify-content-between d-flex">
+                <div id="logo">
+                    <a href="/"><img src="public/img/logo.png" alt="" title="" /></a>
+                </div>
+                <nav id="nav-menu-container">
+                    <ul class="nav-menu">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/about">About</a></li>
+                        <li><a href="/faculty">Faculty</a></li>
+                        <li class="menu-active"><a href="/student">Student</a></li>
+                    </ul>
+                </nav><!-- #nav-menu-container -->
+            </div>
+        </div>
+    </header>
+    <!-- End Header Area -->
+
+
+    <!-- Start Banner Area -->
+    <section class="banner-area relative">
+        <div class="container">
+            <div class="row d-flex align-items-center justify-content-center">
+                <div class="about-content col-lg-12">
+                    <h1 class="text-white">
+                        Student Portal
+                    </h1>
+                    <br>
+                    <br>
+
+                    <br>
+                    <div class="link-nav">
+                        <span class="box">
+                            <a href="/">Home </a>
+                            <i class="lnr lnr-arrow-right"></i>
+                            <a href="/student">Student</a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="rocket-img">
+            <img src="public/img/rocket.png" alt="">
+        </div>
+    </section>
+    <!-- End Banner Area -->
+
+
+    <!--Start Feature Area -->
+    <section class="feature-area">
+        <div class="container">
+            <div class="feature-inner row">
+                <div class="col-lg-12 col-md-12">
+                    <div class="feature-item">
+                        <i class="fas fa-chart-line"></i>
+                        <h4>Analysis Based on Semester</h4>
+                        <div class="wow fadeIn" data-wow-duration="1s" data-wow-delay=".1s">
+                           
+                            <br>
+                            <a class="btn primary-btn" data-toggle="collapse" href="#collapseExample" role="button"
+                                aria-expanded="false" aria-controls="collapseExample"
+                                style="margin-left: 15px; margin-bottom: 5px;">
+                                Know More!
+                            </a>
+                            <div class="collapse" id="collapseExample">
+                                <div class="card card-body">
+                                    <form action="/analysis" method="POST">
+                                        <div class="form-row">
+                                            <div class="col">
+                                                <label for="exampleFormControlSelect1">USN</label>
+                                                <select class="form-control" id="exampleFormControlSelect1"
+                                                    name="an_usn">
+                                                    <% if(Object.keys(usn).length > 0) { %>
+                                                    <% for(var i=0;i<60;i++) { %>
+                                                    <option value="<%= usn[i] %>"> <%= usn[i] %> </option>
+                                                    <% } %>
+                                                    <% } %>
+                                                </select>
+                                            </div>
+                                            <div class="col">
+                                                <label for="exampleFormControlSelect1">USN</label>
+                                                <select class="form-control" id="exampleFormControlSelect1"
+                                                    name="an_sem">
+                                                    <option value="5">5th</option>
+                                                    <option value="7">7th</option>
+                                                </select>
+                                            </div>
+                                            <div class="col"><button type="submit" class="primary-btn">Login</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Feature Area -->
+
+    <!--Start Feature Area -->
+    <section class="feature-area">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="section-title text-center">
+                        <h1>Students</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="feature-inner row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="feature-item">
+                        <i class="ti-crown"></i>
+                        <h4>5th Semester A Section</h4>
+                        <br>
+                        <br>
+                        <a class="primary-btn" data-toggle="collapse" href="#collapseExample1" role="button"
+                            aria-expanded="false" aria-controls="collapseExample">
+                            Show!
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="feature-item">
+                        <i class="ti-crown"></i>
+                        <h4>5th Semester B Section</h4>
+                        <br>
+                        <br>
+                        <a class="primary-btn" data-toggle="collapse" href="#collapseExample2" role="button"
+                            aria-expanded="false" aria-controls="collapseExample">
+                            Show!
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="feature-item">
+                        <i class="ti-crown"></i>
+                        <h4>7th Semester A Section</h4>
+                        <br>
+                        <br>
+                        <a class="primary-btn" data-toggle="collapse" href="#collapseExample3" role="button"
+                            aria-expanded="false" aria-controls="collapseExample">
+                            Show!
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="feature-item">
+                        <i class="ti-crown"></i>
+                        <h4>7th Semester B Section</h4>
+                        <br>
+                        <br>
+                        <a class="primary-btn" data-toggle="collapse" href="#collapseExample4" role="button"
+                            aria-expanded="false" aria-controls="collapseExample">
+                            Show!
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-12 col-md-120">
+                <div class="collapse" id="collapseExample1">
+                    <% for(var i=0;i<15;i++) { %>
+                    <% if(i==0 || i==3 || i==6 || i==9 || i==12) { %>
+                    <div class="row justify-content-center d-flex align-items-center">
+                        <div class="col-lg-3 col-md-6 col-sm-12 single-faculty">
+                            <div class="thumb d-flex justify-content-center">
+                                <img class="img-fluid" src="<%= stud5.link5a[i] %>" alt="">
+                            </div>
+                            <div class="meta-text text-center">
+                                <h4><%= stud5.name5a[i] %></h4>
+                                <div class="info wow fadeIn" data-wow-duration="1s" data-wow-delay=".5s">
+                                    <p>
+                                        <strong><%= stud5.usn5a[i] %></strong>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <% } else if(i==1 || i==4 || i==7 || i==10 || i==13) { %>
+                        <div class="col-lg-3 col-md-6 col-sm-12 single-faculty">
+                            <div class="thumb d-flex justify-content-center">
+                                <img class="img-fluid" src="<%= stud5.link5a[i] %>" alt="">
+                            </div>
+                            <div class="meta-text text-center">
+                                <h4><%= stud5.name5a[i] %></h4>
+                                <div class="info wow fadeIn" data-wow-duration="1s" data-wow-delay=".5s">
+                                    <p>
+                                        <strong><%= stud5.usn5a[i] %></strong>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <% } else { %>
+                        <div class="col-lg-3 col-md-6 col-sm-12 single-faculty">
+                            <div class="thumb d-flex justify-content-center">
+                                <img class="img-fluid" src="<%= stud5.link5a[i] %>" alt="">
+                            </div>
+                            <div class="meta-text text-center">
+                                <h4><%= stud5.name5a[i] %></h4>
+                                <div class="info wow fadeIn" data-wow-duration="1s" data-wow-delay=".5s">
+                                    <p>
+                                        <strong><%= stud5.usn5a[i] %></strong>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <% } %>
+                    <% } %>
+                </div>
+         
+            
+                <div class="collapse" id="collapseExample2">
+                    <% for(var i=0;i<15;i++) { %>
+                    <% if(i==0 || i==3 || i==6 || i==9 || i==12) { %>
+                    <div class="row justify-content-center d-flex align-items-center">
+                        <div class="col-lg-3 col-md-6 col-sm-12 single-faculty">
+                            <div class="thumb d-flex justify-content-center">
+                                <img class="img-fluid" src="<%= stud5.link5b[i] %>" alt="">
+                            </div>
+                            <div class="meta-text text-center">
+                                <h4><%= stud5.name5b[i] %></h4>
+                                <div class="info wow fadeIn" data-wow-duration="1s" data-wow-delay=".5s">
+                                    <p>
+                                        <strong><%= stud5.usn5b[i] %></strong>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <% } else if(i==1 || i==4 || i==7 || i==10 || i==13) { %>
+                        <div class="col-lg-3 col-md-6 col-sm-12 single-faculty">
+                            <div class="thumb d-flex justify-content-center">
+                                <img class="img-fluid" src="<%= stud5.link5b[i] %>" alt="">
+                            </div>
+                            <div class="meta-text text-center">
+                                <h4><%= stud5.name5b[i] %></h4>
+                                <div class="info wow fadeIn" data-wow-duration="1s" data-wow-delay=".5s">
+                                    <p>
+                                        <strong><%= stud5.usn5b[i] %></strong>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <% } else { %>
+                        <div class="col-lg-3 col-md-6 col-sm-12 single-faculty">
+                            <div class="thumb d-flex justify-content-center">
+                                <img class="img-fluid" src="<%= stud5.link5b[i] %>" alt="">
+                            </div>
+                            <div class="meta-text text-center">
+                                <h4><%= stud5.name5b[i] %></h4>
+                                <div class="info wow fadeIn" data-wow-duration="1s" data-wow-delay=".5s">
+                                    <p>
+                                        <strong><%= stud5.usn5b[i] %></strong>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <% } %>
+                    <% } %>
+                </div>
+            
+            
+                <div class="collapse" id="collapseExample3">
+                    <% for(var i=0;i<15;i++) { %>
+                    <% if(i==0 || i==3 || i==6 || i==9 || i==12) { %>
+                    <div class="row justify-content-center d-flex align-items-center">
+                        <div class="col-lg-3 col-md-6 col-sm-12 single-faculty">
+                            <div class="thumb d-flex justify-content-center">
+                                <img class="img-fluid" src="<%= stud7.link7a[i] %>" alt="">
+                            </div>
+                            <div class="meta-text text-center">
+                                <h4><%= stud7.name7a[i] %></h4>
+                                <div class="info wow fadeIn" data-wow-duration="1s" data-wow-delay=".5s">
+                                    <p>
+                                        <strong><%= stud7.usn7a[i] %></strong>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <% } else if(i==1 || i==4 || i==7 || i==10 || i==13) { %>
+                        <div class="col-lg-3 col-md-6 col-sm-12 single-faculty">
+                            <div class="thumb d-flex justify-content-center">
+                                <img class="img-fluid" src="<%= stud7.link7a[i] %>" alt="">
+                            </div>
+                            <div class="meta-text text-center">
+                                <h4><%= stud7.name7a[i] %></h4>
+                                <div class="info wow fadeIn" data-wow-duration="1s" data-wow-delay=".5s">
+                                    <p>
+                                        <strong><%= stud7.usn7a[i] %></strong>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <% } else { %>
+                        <div class="col-lg-3 col-md-6 col-sm-12 single-faculty">
+                            <div class="thumb d-flex justify-content-center">
+                                <img class="img-fluid" src="<%= stud7.link7a[i] %>" alt="">
+                            </div>
+                            <div class="meta-text text-center">
+                                <h4><%= stud7.name7a[i] %></h4>
+                                <div class="info wow fadeIn" data-wow-duration="1s" data-wow-delay=".5s">
+                                    <p>
+                                        <strong><%= stud7.usn7a[i] %></strong>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <% } %>
+                    <% } %>
+                </div>
+         
+            
+                <div class="collapse" id="collapseExample4">
+                    <% for(var i=0;i<15;i++) { %>
+                    <% if(i==0 || i==3 || i==6 || i==9 || i==12) { %>
+                    <div class="row justify-content-center d-flex align-items-center">
+                        <div class="col-lg-3 col-md-6 col-sm-12 single-faculty">
+                            <div class="thumb d-flex justify-content-center">
+                                <img class="img-fluid" src="<%= stud7.link7b[i] %>" alt="">
+                            </div>
+                            <div class="meta-text text-center">
+                                <h4><%= stud7.name7b[i] %></h4>
+                                <div class="info wow fadeIn" data-wow-duration="1s" data-wow-delay=".5s">
+                                    <p>
+                                        <strong><%= stud7.usn7b[i] %></strong>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <% } else if(i==1 || i==4 || i==7 || i==10 || i==13) { %>
+                        <div class="col-lg-3 col-md-6 col-sm-12 single-faculty">
+                            <div class="thumb d-flex justify-content-center">
+                                <img class="img-fluid" src="<%= stud7.link7b[i] %>" alt="">
+                            </div>
+                            <div class="meta-text text-center">
+                                <h4><%= stud7.name7b[i] %></h4>
+                                <div class="info wow fadeIn" data-wow-duration="1s" data-wow-delay=".5s">
+                                    <p>
+                                        <strong><%= stud7.usn7b[i] %></strong>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <% } else { %>
+                        <div class="col-lg-3 col-md-6 col-sm-12 single-faculty">
+                            <div class="thumb d-flex justify-content-center">
+                                <img class="img-fluid" src="<%= stud7.link7b[i] %>" alt="">
+                            </div>
+                            <div class="meta-text text-center">
+                                <h4><%= stud7.name7b[i] %></h4>
+                                <div class="info wow fadeIn" data-wow-duration="1s" data-wow-delay=".5s">
+                                    <p>
+                                        <strong><%= stud7.usn7b[i] %></strong>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <% } %>
+                    <% } %>
+                </div>
+            </div>
+    </section>
+    <!-- End Feature Area -->
+
+    <!-- ####################### Start Scroll to Top Area ####################### -->
+    <div id="back-top">
+        <a title="Go to Top" href="#"></a>
+    </div>
+    <!-- ####################### End Scroll to Top Area ####################### -->
+
+    <script src="public/js/vendor/jquery-2.2.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="public/js/vendor/bootstrap.min.js"></script>
+    <script type="text/javascript"
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>
+    <script src="public/js/easing.min.js"></script>
+    <script src="public/js/hoverIntent.js"></script>
+    <script src="public/js/superfish.min.js"></script>
+    <script src="public/js/jquery.ajaxchimp.min.js"></script>
+    <script src="public/js/jquery.magnific-popup.min.js"></script>
+    <script src="public/js/owl.carousel.min.js"></script>
+    <script src="public/js/owl-carousel-thumb.min.js"></script>
+    <script src="public/js/jquery.sticky.js"></script>
+    <script src="public/js/jquery.nice-select.min.js"></script>
+    <script src="public/js/parallax.min.js"></script>
+    <script src="public/js/waypoints.min.js"></script>
+    <script src="public/js/wow.min.js"></script>
+    <script src="public/js/jquery.counterup.min.js"></script>
+    <script src="public/js/mail-script.js"></script>
+    <script src="public/js/main.js"></script>
+</body>
+
+</html>

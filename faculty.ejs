@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="zxx" class="no-js">
+
+<head>
+	<!-- Mobile Specific Meta -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<!-- Favicon-->
+	<link rel="shortcut icon" href="public/img/fav.png">
+	<!-- Site Title -->
+	<script src="https://kit.fontawesome.com/0f90afb721.js" crossorigin="anonymous"></script>
+	<title>Faculty</title>
+
+	<!--
+			Google Font
+			============================================= -->
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,500,600" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500i" rel="stylesheet">
+
+	<!--
+			CSS
+			============================================= -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/themify-icons/0.1.2/css/themify-icons.css">
+	<link rel="stylesheet" href="public/css/linearicons.css">
+	<link rel="stylesheet" href="public/css/font-awesome.min.css">
+	<link rel="stylesheet" href="public/css/bootstrap.css">
+	<link rel="stylesheet" href="public/css/magnific-popup.css">
+	<link rel="stylesheet" href="public/css/nice-select.css">
+	<link rel="stylesheet" href="public/css/animate.min.css">
+	<link rel="stylesheet" href="public/css/owl.carousel.css">
+	<link rel="stylesheet" href="public/css/main.css">
+</head>
+
+<body>
+
+	<!-- Start Header Area -->
+	<header id="header">
+		<div class="container">
+			<div class="row align-items-center justify-content-between d-flex">
+				<div id="logo">
+					<a href="/"><img src="public/img/logo.png" alt="" title="" /></a>
+				</div>
+				<nav id="nav-menu-container">
+					<ul class="nav-menu">
+						<li><a href="/">Home</a></li>
+						<li><a href="/about">About</a></li>
+						<li class="menu-active"><a href="/faculty">Faculty</a></li>
+						<li><a href="/student">Student</a></li>
+						<li><a href="/logout">Sign Out</a></li>
+					</ul>
+				</nav><!-- #nav-menu-container -->
+			</div>
+		</div>
+	</header>
+	<!-- End Header Area -->
+
+
+	<!-- Start Banner Area -->
+	<section class="banner-area relative">
+		<div class="container">
+			<div class="row d-flex align-items-center justify-content-center">
+				<div class="about-content col-lg-12">
+					<h1 class="text-white">
+						Faculty Portal
+					</h1>
+                    <br>
+                    <br>
+                    <p>Hello, <%= user.name %></p>
+					<br>
+					<div class="link-nav">
+						<span class="box">
+							<a href="/">Home </a>
+							<i class="lnr lnr-arrow-right"></i>
+							<a href="/faculty">Faculty</a>
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="rocket-img">
+			<img src="public/img/rocket.png" alt="">
+		</div>
+	</section>
+	<!-- End Banner Area -->
+
+
+	<!--Start Feature Area -->
+	<section class="feature-area">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-lg-8">
+					<div class="section-title text-center">
+						<h1>Features</h1>
+					</div>
+				</div>
+			</div>
+			<div class="feature-inner row">
+				<div class="col-lg-6 col-md-6">
+					<div class="feature-item">
+						<i class="fas fa-book-reader"></i>
+						<h4>Subject Wise Performance</h4>
+						<div class="wow fadeIn" data-wow-duration="1s" data-wow-delay=".1s">
+							<p>
+								Select the semester to view the class performance.
+							</p>
+							<br>
+							<br>
+							<a class="btn primary-btn" data-toggle="collapse" href="#collapseExample" role="button"
+								aria-expanded="false" aria-controls="collapseExample"
+								style="margin-left: 15px; margin-bottom: 5px;">
+								Know More!
+							</a>
+							<div class="collapse" id="collapseExample">
+								<div class="card card-body">
+									<form action="/subjectwise" method="POST">
+										<div class="form-group col-md-auto">
+											<label for="exampleFormControlSelect1">Semester</label>
+											<select class="form-control" id="exampleFormControlSelect1" name="sub_sem">
+												<option value="5">5th</option>
+												<option value="7">7th</option>
+											</select>
+										</div>
+										<button type="submit" class="primary-btn"
+											style="margin-left: 20px;">Result</button>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-6 col-md-6">
+					<div class="feature-item">
+						<i class="fas fa-user-graduate"></i>
+						<h4>Section Wise Performance</h4>
+						<div class="wow fadeIn" data-wow-duration="1s" data-wow-delay=".3s">
+							<p>
+								Select the semester and section to view the average marks in each subject.
+							</p>
+							<br>
+							<a class="btn primary-btn" data-toggle="collapse" href="#collapseExample2" role="button"
+								aria-expanded="false" aria-controls="collapseExample"
+								style="margin-left: 15px; margin-bottom: 5px;">
+								Know More!
+							</a>
+							<div class="collapse" id="collapseExample2">
+								<div class="card card-body">
+									<form action="/sectionwise" method="POST">
+										<div class="form-group">
+											<label for="exampleFormControlSelect1">Semester</label>
+											<select class="form-control" id="exampleFormControlSelect1" name="sec_sem">
+												<option name="sem" value="5">5th</option>
+												<option namee="sem" value="7">7th</option>
+											</select>
+										</div>
+										<div class="form-group">
+											<label for="exampleFormControlSelect1">Section</label>
+											<select class="form-control" id="exampleFormControlSelect1"
+												name="sec_section">
+												<option name="section" value="A">A</option>
+												<option name="section" value="B">B</option>
+											</select>
+										</div>
+										<button type="submit" class="primary-btn"
+											style="margin-left: 20px;">Result</button>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-6 col-md-6">
+					<div class="feature-item">
+						<i class="ti-medall-alt"></i>
+						<h4>Top 10 Rank List</h4>
+						<div class="wow fadeIn" data-wow-duration="1s" data-wow-delay=".5s">
+							<p>
+								Gives list of TOP 10 students in the semester based on the total.
+							</p>
+							<br>
+							<br>
+							<a class="btn primary-btn" data-toggle="collapse" href="#collapseExample3" role="button"
+								aria-expanded="false" aria-controls="collapseExample"
+								style="margin-left: 15px; margin-bottom: 5px;">
+								Know More!
+							</a>
+							<div class="collapse" id="collapseExample3">
+								<div class="card card-body">
+									<form action="/top10" method="POST">
+										<div class="form-group col-md-auto">
+											<label for="exampleFormControlSelect1">Semester</label>
+											<select class="form-control" id="exampleFormControlSelect1" name="top_sem">
+												<option value="5">5</option>
+												<option value="7">7</option>
+											</select>
+										</div>
+										<button type="submit" class="primary-btn"
+											style="margin-left: 20px;">Result</button>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-6 col-md-6">
+					<div class="feature-item">
+						<i class="fas fa-user-edit"></i>
+						<h4>Update IA Marks</h4>
+						<div class="wow fadeIn" data-wow-duration="1s" data-wow-delay=".1s">
+							<p>
+								The faculty is given an option to enter the marks for a particular student based on selected test and subject.
+							</p>
+							<br>
+							<a class="btn primary-btn" data-toggle="collapse" href="#collapseExample4" role="button"
+								aria-expanded="false" aria-controls="collapseExample"
+								style="margin-left: 15px; margin-bottom: 5px;">
+								Know More!
+							</a>
+							<div class="collapse" id="collapseExample4">
+								<div class="card card-body">
+									<form action="/update" method="POST">
+										<div class="form-group col-md-auto">
+											<label for="exampleFormControlSelect1">Sem</label>
+											<select class="form-control" id="exampleFormControlSelect1" name="up_sem">
+												<option value="5">5th</option>
+												<option value="7">7th</option>
+											</select>
+										</div>
+										<button type="submit" class="primary-btn"
+											style="margin-left: 20px;">Result</button>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End Feature Area -->
+	
+	<!-- ####################### Start Scroll to Top Area ####################### -->
+	<div id="back-top">
+		<a title="Go to Top" href="#"></a>
+	</div>
+	<!-- ####################### End Scroll to Top Area ####################### -->
+
+	<script src="public/js/vendor/jquery-2.2.4.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+		integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+		crossorigin="anonymous"></script>
+	<script src="public/js/vendor/bootstrap.min.js"></script>
+	<script type="text/javascript"
+		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>
+	<script src="public/js/easing.min.js"></script>
+	<script src="public/js/hoverIntent.js"></script>
+	<script src="public/js/superfish.min.js"></script>
+	<script src="public/js/jquery.ajaxchimp.min.js"></script>
+	<script src="public/js/jquery.magnific-popup.min.js"></script>
+	<script src="public/js/owl.carousel.min.js"></script>
+	<script src="public/js/owl-carousel-thumb.min.js"></script>
+	<script src="public/js/jquery.sticky.js"></script>
+	<script src="public/js/jquery.nice-select.min.js"></script>
+	<script src="public/js/parallax.min.js"></script>
+	<script src="public/js/waypoints.min.js"></script>
+	<script src="public/js/wow.min.js"></script>
+	<script src="public/js/jquery.counterup.min.js"></script>
+	<script src="public/js/mail-script.js"></script>
+	<script src="public/js/main.js"></script>
+</body>
+
+</html>

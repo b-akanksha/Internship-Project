@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="zxx" class="no-js">
+
+<head>
+    <!-- Mobile Specific Meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="public/img/fav.png">
+    <!-- Site Title -->
+    <title>Section Wise Evaluation</title>
+
+    <!--
+			Google Font
+			============================================= -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,500,600" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500i" rel="stylesheet">
+
+    <!--
+			CSS
+			============================================= -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/themify-icons/0.1.2/css/themify-icons.css">
+    <link rel="stylesheet" href="public/css/linearicons.css">
+    <link rel="stylesheet" href="public/css/font-awesome.min.css">
+    <link rel="stylesheet" href="public/css/bootstrap.css">
+    <link rel="stylesheet" href="public/css/magnific-popup.css">
+    <link rel="stylesheet" href="public/css/nice-select.css">
+    <link rel="stylesheet" href="public/css/animate.min.css">
+    <link rel="stylesheet" href="public/css/owl.carousel.css">
+    <link rel="stylesheet" href="public/css/main.css">
+</head>
+
+<body>
+
+    <!-- Start Header Area -->
+    <header id="header">
+        <div class="container">
+            <div class="row align-items-center justify-content-between d-flex">
+                <div id="logo">
+                    <a href="/"><img src="public/img/fav.png" alt="" title="" /></a>
+                </div>
+                <nav id="nav-menu-container">
+                    <ul class="nav-menu">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/about">About</a></li>
+                        <li><a href="/faculty">Faculty</a></li>
+                        <li><a href="/student">Student</a></li>
+                        <li><a href="/logout">Logout</a></li>
+                    </ul>
+                </nav><!-- #nav-menu-container -->
+            </div>
+        </div>
+    </header>
+    <!-- End Header Area -->
+
+
+    <!-- Start Banner Area -->
+    <section class="banner-area relative">
+        <div class="container">
+            <div class="row d-flex align-items-center justify-content-center">
+                <div class="about-content col-lg-12">
+                    <h1 class="text-white">
+                        Section Wise Evaluation
+                    </h1>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <p>Hello, <%= user.name %></p>
+                    <br>
+                    <br>
+                    <div class="link-nav">
+                        <span class="box">
+                            <a href="/">Home </a>
+                            <i class="lnr lnr-arrow-right"></i>
+                            <a href="/getsecfac">Section Wise Evaluation</a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="rocket-img">
+            <img src="public/img/rocket.png" alt="">
+        </div>
+    </section>
+    <!-- End Banner Area -->
+
+    <!--Output Area-->
+    <div class="container">
+        
+        <div class="feature-inner row">
+            <div class="col-lg-12 col-md-12">
+                <div class="feature-item">
+                    <i class="ti-crown"></i>
+                    <h4>Bar Graph</h4>
+                    <div class="wow fadeIn" data-wow-duration="1s" data-wow-delay=".1s">
+                        <div class="container">
+                            <div class="chart-container">
+                                <canvas id="bChart"></canvas>
+                            </div>
+                        </div>
+
+                        <script src="path/to/chartjs/dist/Chart.js"></script>
+                        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.js"></script>
+                        <script>
+                            var densityCanvas = document.getElementById("bChart");
+
+                            Chart.defaults.global.defaultFontFamily = "Lato";
+                            Chart.defaults.global.defaultFontSize = 18;
+
+                            var SectionA = {
+                                <% if (student.no == 5) { %>
+                                    <% if (student.sem == "5th Semester A Section") { %>
+                                    label: 'Section A',
+                                    <% } else {%>
+                                    label: 'Section B',
+                                    <% } %>
+                                <% } else { %>
+                                    <% if (student.sem == "7th Semester A Section") { %>
+                                    label: 'Section A',
+                                    <% } else {%>
+                                    label: 'Section B',
+                                    <% } %>
+                                <% } %>
+
+                                data: [<%= student.average %>],
+                                    backgroundColor: 'rgba(0, 99, 132, 0.6)',
+                                        borderWidth: 0,
+                                            yAxisID: "y-axis-density" 
+                            };
+
+                            var SectionB = {
+                                <% if (student.no == 5) { %>
+                                    <% if (student.sem == "5th Semester A Section") { %>
+                                    label: 'Section B',
+                                    <% } else {%>
+                                    label: 'Section A',
+                                    <% } %>
+                                <% } else { %>
+                                    <% if (student.sem == "7th Semester A Section") { %>
+                                    label: 'Section B',
+                                    <% } else {%>
+                                    label: 'Section A',
+                                    <% } %>
+                                <% } %>
+                                data: [<%= student2.average %>],
+                                    backgroundColor: 'rgba(99, 132, 0, 0.6)',
+                                        borderWidth: 0,
+                            };
+
+                            var sectionData = {
+                                <% if (student.no == 5) { %>
+                                labels: ['Subject1', 'Subject2', 'Subject3', 'Subject4', 'Elective1', 'Elective2', 'Lab1', 'Lab2'],
+                                <% } else {%>
+                                labels: ['Subject1', 'Subject2', 'Subject3', 'Elective1', 'Elective2', 'Lab1', 'Lab2'],
+                                <% } %>
+                                datasets: [SectionA, SectionB]
+                            };
+
+                            var chartOptions = {
+                                scales: {
+                                    xAxes: [{
+                                        barPercentage: 1,
+                                        categoryPercentage: 0.6
+                                    }],
+                                    yAxes: [{
+                                        id: "y-axis-density",
+                                        ticks: {
+                                            beginAtZero:true
+                                        }
+                                    },]
+                                }
+                            };
+
+                            var barChart = new Chart(densityCanvas, {
+                                type: 'bar',
+                                data: sectionData,
+                                options: chartOptions
+                            });
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section class="feature-area">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="section-title text-center">
+                            <h1>Average of <%= student.sem %></h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="feature-inner row">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="feature-item">
+                            <i class="ti-crown"></i>
+                            <h4>Subject 1</h4>
+                            <div class="wow fadeIn" data-wow-duration="1s" data-wow-delay=".1s">
+                                <p>
+                                    <strong>Average: </strong><%= student.average[0] %>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="feature-item">
+                            <i class="ti-crown"></i>
+                            <h4>Subject 2</h4>
+                            <div class="wow fadeIn" data-wow-duration="1s" data-wow-delay=".1s">
+                                <p>
+                                    <strong>Average: </strong><%= student.average[1] %>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="feature-item">
+                            <i class="ti-crown"></i>
+                            <h4>Subject 3</h4>
+                            <div class="wow fadeIn" data-wow-duration="1s" data-wow-delay=".1s">
+                                <p>
+                                    <strong>Average: </strong><%= student.average[2] %>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <% if(student.no == 5) { %>
+                    <div class="feature-inner row">
+                            <div class="col-lg-4 col-md-6">
+                                <div class="feature-item">
+                                    <i class="ti-crown"></i>
+                                    <h4>Subject 4</h4>
+                                    <div class="wow fadeIn" data-wow-duration="1s" data-wow-delay=".1s">
+                                        <p>
+                                            <strong>Average: </strong><%= student.average[3] %>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                    <% } else { %>
+                        <div class="feature-inner row">
+                                <div class="col-lg-4 col-md-6">
+                                    <div class="feature-item">
+                                        <i class="ti-crown"></i>
+                                        <h4>Elective 1</h4>
+                                        <div class="wow fadeIn" data-wow-duration="1s" data-wow-delay=".1s">
+                                            <p>
+                                                <strong>Average: </strong><%= student.average[3] %>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                    <% } %>
+                    <% if(student.no == 5) { %>
+                
+                                <div class="col-lg-4 col-md-6">
+                                    <div class="feature-item">
+                                        <i class="ti-crown"></i>
+                                        <h4>Elective 1</h4>
+                                        <div class="wow fadeIn" data-wow-duration="1s" data-wow-delay=".1s">
+                                            <p>
+                                                <strong>Average: </strong><%= student.average[4] %>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                        
+                    <% } else { %>
+                      
+                                <div class="col-lg-4 col-md-6">
+                                    <div class="feature-item">
+                                        <i class="ti-crown"></i>
+                                        <h4>Elective 2</h4>
+                                        <div class="wow fadeIn" data-wow-duration="1s" data-wow-delay=".1s">
+                                            <p>
+                                                <strong>Average: </strong><%= student.average[4] %>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                        
+                    <% } %>
+                    <% if(student.no == 5) { %>
+                       
+                                <div class="col-lg-4 col-md-6">
+                                    <div class="feature-item">
+                                        <i class="ti-crown"></i>
+                                        <h4>Elective 2</h4>
+                                        <div class="wow fadeIn" data-wow-duration="1s" data-wow-delay=".1s">
+                                            <p>
+                                                <strong>Average: </strong><%= student.average[5] %>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    <% } else { %>
+                        
+                                <div class="col-lg-4 col-md-6">
+                                    <div class="feature-item">
+                                        <i class="ti-crown"></i>
+                                        <h4>Lab 1</h4>
+                                        <div class="wow fadeIn" data-wow-duration="1s" data-wow-delay=".1s">
+                                            <p>
+                                                <strong>Average: </strong><%= student.average[5] %>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                    <% } %>
+                    <% if(student.no == 5) { %>
+                        <div class="feature-inner row">
+                                <div class="col-lg-6 col-md-6">
+                                    <div class="feature-item">
+                                        <i class="ti-crown"></i>
+                                        <h4>Lab 1</h4>
+                                        <div class="wow fadeIn" data-wow-duration="1s" data-wow-delay=".1s">
+                                            <p>
+                                                <strong>Average: </strong><%= student.average[6] %>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            
+                    <% } else { %>
+                        <div class="feature-inner row">
+                                <div class="col-lg-12 col-md-6">
+                                    <div class="feature-item">
+                                        <i class="ti-crown"></i>
+                                        <h4>Lab 2</h4>
+                                        <div class="wow fadeIn" data-wow-duration="1s" data-wow-delay=".1s">
+                                            <p>
+                                                <strong>Average: </strong><%= student.average[6] %>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    <% } %>
+                    <% if(student.no == 5) { %>
+                    
+                                <div class="col-lg-6 col-md-6">
+                                    <div class="feature-item">
+                                        <i class="ti-crown"></i>
+                                        <h4>Lab 2</h4>
+                                        <div class="wow fadeIn" data-wow-duration="1s" data-wow-delay=".1s">
+                                            <p>
+                                                <strong>Average: </strong><%= student.average[7] %>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    <% } %>
+        
+            </div>
+        </section>
+        <!-- ####################### Start Scroll to Top Area ####################### -->
+        <div id="back-top ">
+            <a title="Go to Top " href="# "></a>
+        </div>
+        <!-- ####################### End Scroll to Top Area ####################### -->
+
+        <script src="public/js/vendor/jquery-2.2.4.min.js "></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js "
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q "
+            crossorigin="anonymous "></script>
+        <script src="public/js/vendor/bootstrap.min.js "></script>
+        <script type="text/javascript "
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA "></script>
+        <script src="public/js/easing.min.js "></script>
+        <script src="public/js/hoverIntent.js "></script>
+        <script src="public/js/superfish.min.js "></script>
+        <script src="public/js/jquery.ajaxchimp.min.js "></script>
+        <script src="public/js/jquery.magnific-popup.min.js "></script>
+        <script src="public/js/owl.carousel.min.js "></script>
+        <script src="public/js/owl-carousel-thumb.min.js "></script>
+        <script src="public/js/jquery.sticky.js "></script>
+        <script src="public/js/jquery.nice-select.min.js "></script>
+        <script src="public/js/parallax.min.js "></script>
+        <script src="public/js/waypoints.min.js "></script>
+        <script src="public/js/wow.min.js "></script>
+        <script src="public/js/jquery.counterup.min.js "></script>
+        <script src="public/js/mail-script.js "></script>
+        <script src="public/js/main.js "></script>
+</body>
+
+</html>

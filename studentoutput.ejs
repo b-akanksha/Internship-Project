@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="zxx" class="no-js">
+
+<head>
+    <!-- Mobile Specific Meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="public/img/fav.png">
+    <!-- Site Title -->
+    <title>Analysis Based on Semester</title>
+
+    <!--
+			Google Font
+			============================================= -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,500,600" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500i" rel="stylesheet">
+
+    <!--
+			CSS
+			============================================= -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/themify-icons/0.1.2/css/themify-icons.css">
+    <link rel="stylesheet" href="public/css/linearicons.css">
+    <link rel="stylesheet" href="public/css/font-awesome.min.css">
+    <link rel="stylesheet" href="public/css/bootstrap.css">
+    <link rel="stylesheet" href="public/css/magnific-popup.css">
+    <link rel="stylesheet" href="public/css/nice-select.css">
+    <link rel="stylesheet" href="public/css/animate.min.css">
+    <link rel="stylesheet" href="public/css/owl.carousel.css">
+    <link rel="stylesheet" href="public/css/main.css">
+</head>
+
+<body>
+
+    <!-- Start Header Area -->
+    <header id="header">
+        <div class="container">
+            <div class="row align-items-center justify-content-between d-flex">
+                <div id="logo">
+                    <a href="/"><img src="public/img/fav.png" alt="" title="" /></a>
+                </div>
+                <nav id="nav-menu-container">
+                    <ul class="nav-menu">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/about">About</a></li>
+                        <li ><a href="/faculty">Faculty</a></li>
+                        <li><a href="/student">Student</a></li>
+                    </ul>
+                </nav><!-- #nav-menu-container -->
+            </div>
+        </div>
+    </header>
+    <!-- End Header Area -->
+
+
+    <!-- Start Banner Area -->
+    <section class="banner-area relative">
+        <div class="container">
+            <div class="row d-flex align-items-center justify-content-center">
+                <div class="about-content col-lg-12">
+                    <h1 class="text-white">
+                        Analysis Based on Semester
+                    </h1>
+                    <p>The Analysis Based On Semester option gives the output as plot. It shows the performance of the student in a particular semester as a graph.
+                    </p>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <div class="link-nav">
+                        <span class="box">
+                            <a href="/">Home </a>
+                            <i class="lnr lnr-arrow-right"></i>
+                            <a href="/analysis">Analysis Based on Semester</a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="rocket-img">
+            <img src="public/img/rocket.png" alt="">
+        </div>
+    </section>
+    <!-- End Banner Area -->
+
+    <!--Output Area-->
+    <div class="container">
+       
+        <div class="feature-inner row">
+            <div class="col-lg-12 col-md-12">
+                <div class="feature-item">
+                    <i class="ti-crown"></i>
+                    <h4>Line Graph<br><br><%= name %>'s Performance</h4>
+                    <br>
+                    <div class="wow fadeIn" data-wow-duration="1s" data-wow-delay=".1s">
+                        <div class="container">
+                            <div class="chart-container">
+                                <canvas id="lineChart"></canvas>
+                            </div>
+                        </div>
+
+                        <script src="path/to/chartjs/dist/Chart.js"></script>
+                        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.js"></script>
+                        <script>
+                            var cData = {
+            <% if(student.no==5) { %>
+                labels: ['Subject1','Subject2','Subject3','Subject4','Elective1','Elective2','Lab1','Lab2'],
+            <% } else {%>
+                labels: ['Subject1','Subject2','Subject3','Elective1','Elective2','Lab1','Lab2'],
+            <% } %>
+            datasets: [
+                {
+                    label: 'Performance this semester',
+                    data: [<%= student.sub %>],
+                    lineTension: 0,
+                    fill: false,
+                    borderColor: 'orange',
+                    backgroundColor: 'transparent',
+                    pointBorderColor: 'orange',
+                    pointBackgroundColor: 'rgba(255,150,0,0.5)',
+                    pointRadius: 5,
+                    pointHoverRadius: 10,
+                    pointHitRadius: 30,
+                    pointBorderWidth: 2,
+                    pointStyle: 'rectRounded'
+                },
+                {
+                    label: 'Minimum marks',
+                    <% if(student.no) { %>
+                    data: [12,12,12,12,12,12,12,12],
+                    <% } else { %>
+                    data: [12,12,12,12,12,12,12],
+                    <% } %>
+                    lineTension: 0,
+                    fill: false,
+                    borderColor: 'red',
+                    backgroundColor: 'transparent',
+                    pointBorderColor: 'red',
+                    pointBackgroundColor: 'rgba(255,150,0,0.5)',
+                    pointRadius: 5,
+                    pointHoverRadius: 10,
+                    pointHitRadius: 30,
+                    pointBorderWidth: 2,
+                    pointStyle: 'rectRounded'
+                },
+            ]
+        };
+
+        var ctx = document.getElementById("lineChart").getContext("2d");
+        var myNewChart = new Chart(ctx, {
+            type: 'line',
+            data: cData,
+            options: {
+                responsive: true,
+                scales: {
+                    xAxes: [{
+                        ticks: {
+                            fontSize: 20
+                        }
+                    }]
+                }
+            }
+        });
+                        </script>
+                    </div>
+                </div>
+            </div>
+            
+
+            <!-- ####################### Start Scroll to Top Area ####################### -->
+            <div id="back-top ">
+                <a title="Go to Top " href="# "></a>
+            </div>
+            <!-- ####################### End Scroll to Top Area ####################### -->
+
+            <script src="public/js/vendor/jquery-2.2.4.min.js "></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js "
+                integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q "
+                crossorigin="anonymous "></script>
+            <script src="public/js/vendor/bootstrap.min.js "></script>
+            <script type="text/javascript "
+                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA "></script>
+            <script src="public/js/easing.min.js "></script>
+            <script src="public/js/hoverIntent.js "></script>
+            <script src="public/js/superfish.min.js "></script>
+            <script src="public/js/jquery.ajaxchimp.min.js "></script>
+            <script src="public/js/jquery.magnific-popup.min.js "></script>
+            <script src="public/js/owl.carousel.min.js "></script>
+            <script src="public/js/owl-carousel-thumb.min.js "></script>
+            <script src="public/js/jquery.sticky.js "></script>
+            <script src="public/js/jquery.nice-select.min.js "></script>
+            <script src="public/js/parallax.min.js "></script>
+            <script src="public/js/waypoints.min.js "></script>
+            <script src="public/js/wow.min.js "></script>
+            <script src="public/js/jquery.counterup.min.js "></script>
+            <script src="public/js/mail-script.js "></script>
+            <script src="public/js/main.js "></script>
+</body>
+
+</html>

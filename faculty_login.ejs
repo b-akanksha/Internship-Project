@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="zxx" class="no-js">
+
+<head>
+	<!-- Mobile Specific Meta -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<!-- Favicon-->
+	<link rel="shortcut icon" href="public/img/fav.png">
+	<!-- Site Title -->
+	<title>Faculty</title>
+
+	<!--
+			Google Font
+			============================================= -->
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,500,600" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500i" rel="stylesheet">
+
+	<!--
+			CSS
+			============================================= -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/themify-icons/0.1.2/css/themify-icons.css">
+	<link rel="stylesheet" href="public/css/linearicons.css">
+	<link rel="stylesheet" href="public/css/font-awesome.min.css">
+	<link rel="stylesheet" href="public/css/bootstrap.css">
+	<link rel="stylesheet" href="public/css/magnific-popup.css">
+	<link rel="stylesheet" href="public/css/nice-select.css">
+	<link rel="stylesheet" href="public/css/animate.min.css">
+	<link rel="stylesheet" href="public/css/owl.carousel.css">
+	<link rel="stylesheet" href="public/css/main.css">
+</head>
+
+<body>
+
+	<!-- Start Header Area -->
+	<header id="header">
+		<div class="container">
+			<div class="row align-items-center justify-content-between d-flex">
+				<div id="logo">
+					<a href="/"><img src="public/img/logo.png" alt="" title="" /></a>
+				</div>
+				<nav id="nav-menu-container">
+					<ul class="nav-menu">
+						<li><a href="/">Home</a></li>
+						<li><a href="/about">About</a></li>
+						<li class="menu-active"><a href="/faculty.ejs">Faculty</a></li>
+						<li><a href="/student">Student</a></li>
+						<li><a href="/logout">Sign Out</a></li>
+					</ul>
+				</nav><!-- #nav-menu-container -->
+			</div>
+		</div>
+	</header>
+	<!-- End Header Area -->
+
+
+	<!-- Start Banner Area -->
+	<section class="banner-area relative">
+		<div class="container">
+			<div class="row d-flex align-items-center justify-content-center">
+				<div class="about-content col-lg-12">
+					<h1 class="text-white">
+						Faculty Portal Login
+					</h1>
+					<br>
+					<br>
+					<br>
+					<br>
+					<div class="link-nav">
+						<span class="box">
+							<a href="/">Home </a>
+							<i class="lnr lnr-arrow-right"></i>
+							<a href="/faculty">Faculty</a>
+						</span>
+					</div>
+					<br>
+					<br>
+					<br>
+					<br>
+					<form action="/faculty_login" method="POST">
+						<div class="form-row">
+							<div class="col">
+								<input type="email" class="form-control" placeholder="Email" name="email" class="validate">
+							</div>
+							<div class="col">
+								<input type="password" class="form-control" placeholder="Password" name="password" class="validate">
+								
+							</div>
+							<div class="col"><button type="submit" class="primary-btn">Login</button></div>
+						</div>
+						<div style="color: white; text-align: center;">
+								<% if(errors.length > 0) { %>
+									<% errors.forEach(error => { %>
+										<p><%= error %></p>
+									<% }) %>
+								<% } %>
+							</div>
+					</form>
+					<br>
+				</div>
+			</div>
+		</div>
+		<div class="rocket-img">
+			<img src="public/img/rocket.png" alt="">
+		</div>
+	</section>
+	<!-- End Banner Area -->
+
+
+	<!-- ####################### Start Scroll to Top Area ####################### -->
+	<div id="back-top">
+		<a title="Go to Top" href="#"></a>
+	</div>
+	<!-- ####################### End Scroll to Top Area ####################### -->
+
+	<script src="public/js/vendor/jquery-2.2.4.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+		integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+		crossorigin="anonymous"></script>
+	<script src="public/js/vendor/bootstrap.min.js"></script>
+	<script type="text/javascript"
+		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>
+	<script src="public/js/easing.min.js"></script>
+	<script src="public/js/hoverIntent.js"></script>
+	<script src="public/js/superfish.min.js"></script>
+	<script src="public/js/jquery.ajaxchimp.min.js"></script>
+	<script src="public/js/jquery.magnific-popup.min.js"></script>
+	<script src="public/js/owl.carousel.min.js"></script>
+	<script src="public/js/owl-carousel-thumb.min.js"></script>
+	<script src="public/js/jquery.sticky.js"></script>
+	<script src="public/js/jquery.nice-select.min.js"></script>
+	<script src="public/js/parallax.min.js"></script>
+	<script src="public/js/waypoints.min.js"></script>
+	<script src="public/js/wow.min.js"></script>
+	<script src="public/js/jquery.counterup.min.js"></script>
+	<script src="public/js/mail-script.js"></script>
+	<script src="public/js/main.js"></script>
+</body>
+
+</html>

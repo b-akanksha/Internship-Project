@@ -25,3 +25,5 @@ Use the following email id - password combination to access the faculty features
 
 # Google Spreadsheet:
 Google Spreadsheet is used to store student data. Link to spreadsheet: https://docs.google.com/spreadsheets/d/1ZwulnnmZo1Dx6ha7jlc0D0_N1ccV05uPqf3xeV9JTFI/edit?usp=sharing
+
+Sometimes, there is a need to manually refresh the page to get the output.
